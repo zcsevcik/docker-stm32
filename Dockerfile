@@ -1,9 +1,9 @@
 FROM frolvlad/alpine-glibc:latest
 MAINTAINER Radek Ševčík <zcsevcik@gmail.com>
 
-RUN apk --update add make
-RUN apk --update add --virtual build-dependencies w3m openssl ca-certificates unzip
-RUN apk --update add stlink --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+RUN apk --update --no-cache add make
+RUN apk --update --no-cache add --virtual build-dependencies w3m openssl ca-certificates unzip
+RUN apk --update --no-cache add stlink --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
 RUN GCCARM_LINK="$(w3m -o display_link_number=1 -dump 'https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads' | \
   grep -m1 '^\[[0-9]\+\].*downloads.*gcc-arm-none-eabi.*linux\.tar\.bz2' | \
