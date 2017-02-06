@@ -9,7 +9,7 @@ RUN GCCARM_LINK="$(w3m -o display_link_number=1 -dump 'https://developer.arm.com
   grep -m1 '^\[[0-9]\+\].*downloads.*gcc-arm-none-eabi.*linux\.tar\.bz2' | \
   sed -e 's/^\[[0-9]\+\] //')" && \
   wget -O /tmp/gcc-arm-none-eabi.tar.bz2 ${GCCARM_LINK} && \
-  tar xvf /tmp/gcc-arm-none-eabi.tar.bz2 --strip-components=1 -C /usr && \
+  tar xvf /tmp/gcc-arm-none-eabi.tar.bz2 --strip-components=1 -C /usr/local && \
   rm -rf /tmp/gcc-arm-none-eabi.tar.bz2
 
 RUN FW_F0="stm32cube_fw_f0_v170.zip" && \
