@@ -1,5 +1,5 @@
 FROM frolvlad/alpine-glibc:latest
-MAINTAINER Radek Ševčík <zcsevcik@gmail.com>
+LABEL maintainer "zcsevcik@gmail.com"
 
 RUN apk --update --no-cache add make
 RUN apk --update --no-cache add --virtual build-dependencies w3m openssl ca-certificates unzip
