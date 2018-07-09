@@ -1,7 +1,7 @@
 FROM frolvlad/alpine-glibc:latest
 LABEL maintainer "zcsevcik@gmail.com"
 
-RUN apk --update --no-cache upgrade &&
+RUN apk --update --no-cache upgrade && \
     apk --update --no-cache add make && \
     apk --update --no-cache add --virtual build-dependencies w3m openssl ca-certificates unzip && \
     apk --update --no-cache add stlink --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
