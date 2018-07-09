@@ -3,7 +3,7 @@ LABEL maintainer "zcsevcik@gmail.com"
 
 RUN apk --update --no-cache upgrade && \
     apk --update --no-cache add make && \
-    apk --update --no-cache add --virtual build-dependencies w3m openssl ca-certificates unzip && \
+    apk --update --no-cache add --virtual build-dependencies w3m wget openssl ca-certificates unzip && \
     apk --update --no-cache add stlink --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
 
     GCCARM_LINK="$(w3m -o display_link_number=1 -dump 'https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads' | \
